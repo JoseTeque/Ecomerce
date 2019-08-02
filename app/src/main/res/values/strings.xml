@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Ecomerce</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Email_Id">Email ID</string>
+    <string name="Password">Password</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="SignIn">Sign In</string>
+    <string name="or">or</string>
+    <string name="dont_have_account">Don´t have an account?Sign Up!</string>
+    <string name="Name">FullName</string>
+    <string name="PasswordConfirm">Confirm Password</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="Already_account">Already have an account?Sign In!</string>
 </resources>
