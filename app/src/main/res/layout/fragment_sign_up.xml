@@ -37,7 +37,7 @@
             app:layout_constraintVertical_bias="0.100000024" />
 
         <EditText
-            android:id="@+id/edtxEmailIdSignUp"
+            android:id="@+id/edtxEmailIdSignIn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -68,7 +68,7 @@
             android:textColorHint="#70ffffff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtxEmailIdSignUp" />
+            app:layout_constraintTop_toBottomOf="@+id/edtxEmailIdSignIn" />
 
 
         <Button

@@ -17,10 +17,8 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -75,7 +73,7 @@ public class SignUpFragment extends Fragment {
         alreadyHaveAccount = view.findViewById(R.id.already_account);
         parentFrameLayout = getActivity().findViewById(R.id.register_frameLayout);
 
-        email = view.findViewById(R.id.edtxEmailIdSignUp);
+        email = view.findViewById(R.id.edtxEmailIdSignIn);
         fullName = view.findViewById(R.id.edtxName);
         password = view.findViewById(R.id.edtxPasswordSignUp);
         confirmPassword = view.findViewById(R.id.edtxConfirmPassword);
@@ -98,6 +96,13 @@ public class SignUpFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 setFragment(new SigInFragment());
+            }
+        });
+
+        closeSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),MainActivity.class));
             }
         });
 

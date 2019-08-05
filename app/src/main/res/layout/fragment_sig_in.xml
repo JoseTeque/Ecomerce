@@ -37,7 +37,7 @@
             app:layout_constraintVertical_bias="0.19999999" />
 
         <EditText
-            android:id="@+id/edtxEmailIdSignUp"
+            android:id="@+id/edtxEmailIdSignIn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <EditText
-            android:id="@+id/edtxpassword"
+            android:id="@+id/edtxpasswordSignIn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -63,12 +63,12 @@
             android:backgroundTint="#70ffffff"
             android:ems="10"
             android:textColor="@color/colorAccent"
-            android:hint="@string/Password"
+            android:hint="@string/PasswordSignIn"
             android:inputType="textPassword"
             android:textColorHint="#70ffffff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtxEmailIdSignUp" />
+            app:layout_constraintTop_toBottomOf="@+id/edtxEmailIdSignIn" />
 
         <TextView
             android:id="@+id/txtForgotPassword"
@@ -77,8 +77,8 @@
             android:layout_marginStart="4dp"
             android:text="@string/forgotPassword"
             android:textColor="@color/colorAccent"
-            app:layout_constraintStart_toStartOf="@+id/edtxpassword"
-            app:layout_constraintTop_toBottomOf="@+id/edtxpassword" />
+            app:layout_constraintStart_toStartOf="@+id/edtxpasswordSignIn"
+            app:layout_constraintTop_toBottomOf="@+id/edtxpasswordSignIn" />
 
         <Button
             android:id="@+id/btnSignIn"
@@ -91,8 +91,9 @@
             android:textSize="16sp"
             android:background="@color/btnRed"
             android:text="@string/SignIn"
+            android:enabled="false"
             android:textAllCaps="false"
-            android:textColor="@color/colorAccent"
+            android:textColor="#50ffffff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

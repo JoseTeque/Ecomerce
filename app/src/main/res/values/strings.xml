@@ -13,4 +13,5 @@
     <string name="PasswordConfirm">Confirm Password</string>
     <string name="SignUp">Sign Up</string>
     <string name="Already_account">Already have an account?Sign In!</string>
+    <string name="PasswordSignIn">Password</string>
 </resources>
