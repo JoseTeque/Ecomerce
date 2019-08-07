@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,8 +20,6 @@ public class SplashActivity extends AppCompatActivity {
 
         SystemClock.sleep(3000);
         firebaseAuth = FirebaseAuth.getInstance();
-
-
     }
 
     @Override
@@ -31,12 +30,11 @@ public class SplashActivity extends AppCompatActivity {
 
         if (currentUser == null)
         {
-            startActivity(new Intent(SplashActivity.this, RegisterActivity.class));
+            startActivity(new Intent(this, RegisterActivity.class));
             finish();
-        }
-        else
+        }else
         {
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }

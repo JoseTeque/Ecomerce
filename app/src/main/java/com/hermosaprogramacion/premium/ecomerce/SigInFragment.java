@@ -32,6 +32,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import static com.hermosaprogramacion.premium.ecomerce.RegisterActivity.onResetPassword;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,7 +53,6 @@ public class SigInFragment extends Fragment {
     private TextView forgotPassword;
 
     private FirebaseAuth firebaseAuth;
-    private FirebaseFirestore firebaseFirestore;
 
     private  String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
@@ -139,6 +140,14 @@ public class SigInFragment extends Fragment {
                 checkEmailAndPassword();
             }
         });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onResetPassword = true;
+                setFragment(new ResetPasswordFragment());
+            }
+        });
     }
 
     private void checkEmailAndPassword() {
@@ -162,6 +171,7 @@ public class SigInFragment extends Fragment {
 
                                  }else
                                  {
+                                     progressBar.setVisibility(View.INVISIBLE);
                                      String error = task.getException().getMessage();
                                      Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
                                      btnSigIn.setEnabled(true);
@@ -171,8 +181,8 @@ public class SigInFragment extends Fragment {
                          }).addOnFailureListener(new OnFailureListener() {
                      @Override
                      public void onFailure(@NonNull Exception e) {
-                         btnSigIn.setEnabled(false);
-                         btnSigIn.setTextColor(Color.argb(50,255,255,255));
+                         btnSigIn.setEnabled(true);
+                         btnSigIn.setTextColor(Color.rgb(255,255,255));
                      }
                  });
                }

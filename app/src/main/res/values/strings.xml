@@ -14,4 +14,10 @@
     <string name="SignUp">Sign Up</string>
     <string name="Already_account">Already have an account?Sign In!</string>
     <string name="PasswordSignIn">Password</string>
+    <string name="Dont_worry_email">Don´t worry, we just need your registered
+        email address and its done!!</string>
+    <string name="Reset_password">Reset Password</string>
+    <string name="check_imbox">Check your imbox after clickend button above.</string>
+    <string name="god_back">&lt;&lt; GO BACK</string>
+    <string name="Recovery">Recovery email sent successfully ! check your imbox</string>
 </resources>
