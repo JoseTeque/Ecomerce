@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ecomerce</string>
+    <string name="app_name">My Mall</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -20,4 +20,31 @@
     <string name="check_imbox">Check your imbox after clickend button above.</string>
     <string name="god_back">&lt;&lt; GO BACK</string>
     <string name="Recovery">Recovery email sent successfully ! check your imbox</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
+    <string name="carst">Cart</string>
+    <string name="full_name">Full name</string>
+    <string name="Email_address">Email Address</string>
+    <string name="my_mall">My Mall</string>
+    <string name="my_orders">My Orders</string>
+    <string name="my_reward">My Rewards</string>
+    <string name="my_carts">My Carts</string>
+    <string name="my_favorite">My Favorite</string>
+    <string name="my_accounts">My Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="home">Home</string>
 </resources>

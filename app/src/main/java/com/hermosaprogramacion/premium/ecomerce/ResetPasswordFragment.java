@@ -187,7 +187,7 @@ public class ResetPasswordFragment extends Fragment {
 
     private void setFragment(Fragment fragment) {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.slide_from_right,R.anim.slideout_from_left);
+        transaction.setCustomAnimations(R.anim.slide_from_left,R.anim.slideout_from_right);
         transaction.replace(parentFrameLayout.getId(),fragment);
         transaction.commit();
     }
