@@ -1,8 +1,10 @@
 package com.hermosaprogramacion.premium.ecomerce;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +15,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +41,24 @@ public class HomeFragment extends Fragment {
     private Timer timer;
     final private long DELAY_TIME = 3000;
     final private long PERIODO_TIME = 3000;
-
     ////////// Banner Slider
+
+    ///////// Strip Ad
+      private ImageView        stripAdImage;
+      private ConstraintLayout stripAdContainer;
+    ///////// Strip Ad
+
+    ////////// Horizontal product layout
+    private TextView      h_s_product_title;
+    private Button        h_s_product_btn;
+    private RecyclerView  h_s_product_recyclerView;
+    ////////// Horizontal product layout
+
+    //////// Grid Product layout
+    private TextView      grid_product_title;
+    private Button        grid_product_btn;
+    private GridView      grid_product_gridView;
+    //////// Grid Product layout
 
     public HomeFragment() {
         // Required empty public constructor
@@ -71,21 +93,23 @@ public class HomeFragment extends Fragment {
         bannerSliderViewPager = view.findViewById(R.id.banner_slider_view_pager);
         sliderModelList = new ArrayList<SliderModel>();
 
-        sliderModelList.add(new SliderModel(R.drawable.app_icon));
-        sliderModelList.add(new SliderModel(R.drawable.custom_error_icon));
+        sliderModelList.add(new SliderModel(R.drawable.ic_shopping_cart_black_24dp,"#077AE4"));
+        sliderModelList.add(new SliderModel(R.drawable.app_icon,"#077AE4"));
+        sliderModelList.add(new SliderModel(R.drawable.custom_error_icon,"#077AE4"));
 
-        sliderModelList.add(new SliderModel(R.drawable.ic_mail_outline_24px));
-        sliderModelList.add(new SliderModel(R.drawable.grupo_317));
-        sliderModelList.add(new SliderModel(R.drawable.mail_outline_24px));
-        sliderModelList.add(new SliderModel(R.drawable.logo));
-        sliderModelList.add(new SliderModel(R.drawable.ic_shopping_cart_black_24dp));
+        sliderModelList.add(new SliderModel(R.drawable.ic_mail_outline_24px,"#077AE4"));
+        sliderModelList.add(new SliderModel(R.drawable.grupo_317,"#077AE4"));
+        sliderModelList.add(new SliderModel(R.drawable.mail_outline_24px,"#077AE4"));
+        sliderModelList.add(new SliderModel(R.drawable.logo,"#077AE4"));
+        sliderModelList.add(new SliderModel(R.drawable.ic_shopping_cart_black_24dp,"#077AE4"));
 
-        sliderModelList.add(new SliderModel(R.drawable.ic_mail_outline_24px));
-        sliderModelList.add(new SliderModel(R.drawable.profile_placeholder));
+        sliderModelList.add(new SliderModel(R.drawable.ic_mail_outline_24px,"#077AE4"));
+        sliderModelList.add(new SliderModel(R.drawable.profile_placeholder,"#077AE4"));
 
         SliderAdapter adapter = new SliderAdapter(sliderModelList);
         bannerSliderViewPager.setAdapter(adapter);
         bannerSliderViewPager.setClipToPadding(false);
+        bannerSliderViewPager.setCurrentItem(currentPager);
         bannerSliderViewPager.setPageMargin(20);
 
         ViewPager.OnPageChangeListener onPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -123,8 +147,48 @@ public class HomeFragment extends Fragment {
                 return false;
             }
         });
-
         ////////// Banner Slider
+
+        ///////// Strip Ad
+        stripAdImage = view.findViewById(R.id.strip_ad_image);
+        stripAdContainer = view.findViewById(R.id.strip_ad_container);
+
+        stripAdImage.setImageResource(R.drawable.all_new_samsung_galaxy_note_9_is_here);
+        stripAdContainer.setBackgroundColor(Color.parseColor("#000000"));
+        ///////// Strip Ad
+
+        ////////// Horizontal product layout
+        h_s_product_title = view.findViewById(R.id.horizontal_scroll_layout_title);
+        h_s_product_btn = view.findViewById(R.id.horizontal_scroll_layout_button);
+        h_s_product_recyclerView = view.findViewById(R.id.horizontal_scroll_layout_recyclerView);
+
+        List<HorizontalProductScrollModel> horizontalProductScrollModels = new ArrayList<>();
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.imagen_2, "Redmi A5", "SD 425 PROCESSOR", "6000/"));
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.app_icon, "Redmi A6", "SD 425 PROCESSOR", "6000/"));
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.ic_shopping_cart_black_24dp, "Redmi A7", "SD 425 PROCESSOR", "6000/"));
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.custom_error_icon, "Redmi A8", "SD 425 PROCESSOR", "6000/"));
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.app_icon, "Redmi A9", "SD 425 PROCESSOR", "6000/"));
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.imagen_2, "Redmi A10", "SD 425 PROCESSOR", "6000/"));
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.imagen_2, "Redmi A11", "SD 425 PROCESSOR", "6000/"));
+        horizontalProductScrollModels.add(new HorizontalProductScrollModel(R.drawable.imagen_2, "Redmi A12", "SD 425 PROCESSOR", "6000/"));
+
+        HorizontalProductScrollAdapter horizontalProductScrollAdapter = new HorizontalProductScrollAdapter(horizontalProductScrollModels);
+        LinearLayoutManager horizontalManager = new LinearLayoutManager(getContext());
+        horizontalManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        h_s_product_recyclerView.setLayoutManager(horizontalManager);
+        h_s_product_recyclerView.setAdapter(horizontalProductScrollAdapter);
+        horizontalProductScrollAdapter.notifyDataSetChanged();
+        ////////// Horizontal product layout
+
+        //////// Grid Product layout
+        grid_product_title = view.findViewById(R.id.grid_product_layout_title);
+        grid_product_btn = view.findViewById(R.id.grid_product_layout_btn);
+        grid_product_gridView = view.findViewById(R.id.grid_product_layout_gridView);
+
+        grid_product_gridView.setAdapter(new GridProductAdapter(horizontalProductScrollModels));
+
+        //////// Grid Product layout
+
 
         return view;
     }
